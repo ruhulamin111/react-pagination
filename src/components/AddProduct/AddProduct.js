@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
@@ -12,7 +13,10 @@ const AddProduct = () => {
         }
         console.log(product);
         const { data } = await axios.post('http://localhost:5000/products', product)
-
+        if (!data.success) {
+            return toast.error(data.error)
+        }
+        toast.success(data.message)
         event.target.reset()
     }
 
