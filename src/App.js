@@ -4,6 +4,8 @@ import AddProduct from './components/AddProduct/AddProduct';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import ProductList from './components/ProductList/ProductList';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path='/productlist' element={<ProductList></ProductList>}></Route>
 
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
