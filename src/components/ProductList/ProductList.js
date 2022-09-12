@@ -61,10 +61,10 @@ const ProductList = () => {
             </table>
             <div className='flex justify-end my-4'>
                 {
-                    [...Array(pageAmount).keys()].map((number, index) => <button key={index} onClick={() => setPage(number)} className='ml-3 border-2 px-3'>{number + 1}</button>)
+                    [...Array(pageAmount).keys()].map((number, index) => <button key={index} onClick={() => setPage(number)} className={`ml-3 border-2 px-3 ${page === number && 'bg-green-400'}`}>{number + 1}</button>)
                 }
-                <select onChange={(event) => setSize(event.target.value)}>
-                    <option value="5" >5</option>
+                <select defaultValue={size} onChange={(event) => setSize(event.target.value)}>
+                    <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
 
